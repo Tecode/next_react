@@ -18,6 +18,10 @@ Next.js是服务端渲染呈现的React应用程序的简约框架,这个项目�
 + Express v4.16.3
 + React v16.4.2
 
+## 功能
+
++ SSR
++ Automatic code splitting
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 如何使用
