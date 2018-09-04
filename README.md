@@ -17,13 +17,56 @@ Next.js是服务端渲染呈现的React应用程序的简约框架,这个项目�
 + less
 + Express v4.16.3
 + React v16.4.2
++ next-routes
 
 ## 功能
 
 + SSR
 + Automatic code splitting
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## 其它
+### 使用了动态路由跳转使用next-routes提供的方法
++ Link example
+
+```bash
+import {Link} from '../routes'
+
+export default () => (
+  <div>
+    <div>Welcome to Next.js!</div>
+    <Link route='blog' params={{slug: 'hello-world'}}>
+      <a>Hello world</a>
+    </Link>
+    or
+    <Link route='/blog/hello-world'>
+      <a>Hello world</a>
+    </Link>
+  </div>
+)
+```
++ Router example
+
+```bash
+import React from 'react'
+import {Router} from '../routes'
+
+export default class Blog extends React.Component {
+  handleClick () {
+    // With route name and params
+    Router.pushRoute('blog', {slug: 'hello-world'})
+    // With route URL
+    Router.pushRoute('/blog/hello-world')
+  }
+  render () {
+    return (
+      <div>
+        <div>{this.props.url.query.slug}</div>
+        <button onClick={this.handleClick}>Home</button>
+      </div>
+    )
+  }
+}
+```
 ## 如何使用
 
 ### 安装

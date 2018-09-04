@@ -1,9 +1,11 @@
 import Reacr from 'react';
 import Link from 'next/link';
 import { inject, observer } from 'mobx-react';
+import { toJS } from 'mobx';
 import styles from './index.less';
 
 function ChildPage({ appStore }) {
+    console.log(toJS(appStore.treeData), appStore.name, '-----------');
     return(
         <React.Fragment>
             <Link href={{ pathname: "/", query: { id: 1} }}>
