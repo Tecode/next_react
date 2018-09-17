@@ -20,6 +20,7 @@ export default class MyDocument extends Document {
                     />
                     <link rel="manifest" href="static/manifest.json" />
                     <link rel="icon" href="static/img/favicon.ico" />
+                    <link rel="stylesheet" href="static/css/antd.min.css" />
                     {css.map(file => (
                         <link rel="stylesheet" href={`/_next/${file}?version=${Math.random().toString(32)}`} key={file} />
                     ))}

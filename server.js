@@ -7,6 +7,7 @@ const handler = routes.getRequestHandler(app)
 const mobxReact = require('mobx-react');
 
 mobxReact.useStaticRendering(true)
+
 app.prepare()
   .then(() => {
     const server = express()
