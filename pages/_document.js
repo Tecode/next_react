@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
         const helmet = Helmet.renderStatic();
         const htmlAttrs = helmet.htmlAttributes.toComponent();
         const bodyAttrs = helmet.bodyAttributes.toComponent();
-        console.log('css', this.props);
+        // console.log(this.props.buildManifest.pages, '----------------------->>>>>>>>>>>');
         return (
             <html lang="zh-cn" {...htmlAttrs}>
                 <Head>
@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
                     />
                     <link rel="manifest" href="static/manifest.json" />
                     <link rel="icon" href="static/img/favicon.ico" />
-                    <link rel="stylesheet" href="static/css/antd.min.css" />
+                    <link rel="stylesheet" href="/static/css/antd.min.css" />
                     <title>Next_Project</title>
                     {helmet.title.toComponent()}
                     {helmet.meta.toComponent()}
