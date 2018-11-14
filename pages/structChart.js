@@ -1,7 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
+import StructChart from '../components/StructChart';
 
-export default class StructChart extends Component {
-    render() {
-        return <h1>结构图</h1>;
-    }
-}
+export default () => <StructChart/>;

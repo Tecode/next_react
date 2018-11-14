@@ -1,0 +1,82 @@
+.wrap {
+    position: relative;
+    cursor: move;
+  }
+  // 低版本谷歌浏览器缩放不兼容
+  svg {
+    text-rendering: geometricPrecision
+  }
+  .nodeTwinkle {
+    animation: animations-twinkle 2s ease infinite;
+  }
+  
+  @keyframes animations-twinkle {
+    0% {
+      stroke-width: 0;
+      stroke-opacity: 1
+    }
+    to {
+      stroke-width: 10px;
+      stroke-opacity: 0
+    }
+  }
+  @keyframes animations-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .verticalLineLoadding {
+    animation: animations-loading 1s ease infinite
+  }
+  
+  :global {
+    .new-network-rect {
+      cursor: move
+    }
+    @keyframes animations {
+      0% {
+        stroke-width: 0;
+        stroke-opacity: 1
+      }
+      to {
+        stroke-width: 10px;
+        stroke-opacity: 0
+      }
+    }
+    .new-network-node-twinkle {
+      animation: animations 2s ease infinite
+    }
+  
+    .structure-border.blue.active,
+    .structure-link.blue.active,
+    .structure-hover-link.blue.active,
+    .structure-marker.blue.active {
+      stroke: #42A5F5 !important;
+    }
+    .structure-border.green.active,
+    .structure-link.green.active,
+    .structure-hover-link.green.active,
+    .structure-marker.green.active {
+      stroke: #66BB6A !important;
+    }
+    .structure-border.orange.active,
+    .structure-link.orange.active,
+    .structure-hover-link.orange.active,
+    .structure-marker.orange.active {
+      stroke: #FF9800 !important;
+    }
+  }
+  
+  .boxFullScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1400;
+    background-color: #fff;
+  }
+  
