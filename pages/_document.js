@@ -11,10 +11,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="zh-cn" {...htmlAttrs}>
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui"
-          />
+          <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
           <link rel="manifest" href="static/manifest.json" />
           <link rel="icon" href="static/img/favicon.ico" />
           <link rel="stylesheet" href="/static/css/antd.min.css" />
