@@ -1,5 +1,6 @@
-import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import React from 'react';
+import Document, { Main, NextScript } from 'next/document';
+import Head from 'next/head';
 import { Helmet } from "react-helmet";
 
 export default class MyDocument extends Document {
@@ -10,16 +11,16 @@ export default class MyDocument extends Document {
     // console.log(this.props.buildManifest.pages, '----------------------->>>>>>>>>>>');
     return (
       <html lang="zh-cn" {...htmlAttrs}>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
+        <link rel="manifest" href="static/manifest.json" />
+        <link rel="icon" href="static/img/favicon.ico" />
+        <link rel="stylesheet" href="/static/css/antd.min.css" />
         <Head>
-          <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
-          <link rel="manifest" href="static/manifest.json" />
-          <link rel="icon" href="static/img/favicon.ico" />
-          <link rel="stylesheet" href="/static/css/antd.min.css" />
           <title>Next_Project</title>
-          {helmet.title.toComponent()}
-          {helmet.meta.toComponent()}
-          {helmet.link.toComponent()}
         </Head>
+        {helmet.title.toComponent()}
+        {helmet.meta.toComponent()}
+        {helmet.link.toComponent()}
         <body {...bodyAttrs}>
           <Main />
         </body>
