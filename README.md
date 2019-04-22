@@ -1,14 +1,11 @@
-<img width="112" alt="screen shot 2016-10-25 at 2 37 27 pm" src="https://cloud.githubusercontent.com/assets/13041/19686250/971bf7f8-9ac0-11e6-975c-188defd82df1.png">
-
-[![NPM version](https://img.shields.io/npm/v/next.svg)](https://www.npmjs.com/package/next)
-[![Build Status](https://travis-ci.org/zeit/next.js.svg?branch=master)](https://travis-ci.org/zeit/next.js)
-[![Build status](https://ci.appveyor.com/api/projects/status/gqp5hs71l3ebtx1r/branch/master?svg=true)](https://ci.appveyor.com/project/arunoda/next-js/branch/master)
-[![Coverage Status](https://coveralls.io/repos/zeit/next.js/badge.svg?branch=master)](https://coveralls.io/r/zeit/next.js?branch=master)
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/next-js)
+<p align="center">
+<img alt="图片" src="static/images/next.png">
+<img width="140" alt="图片" src="static/images/antd.png">
+<img width="120" alt="图片" src="static/images/mobx.png">
+</p>
 
 Next.js是服务端渲染呈现的React应用程序的简约框架,这个项目通过配置Next.js+Mbox实现的一个Demo.
 
----
 ## 模块
 
 + react-helmet
@@ -20,16 +17,40 @@ Next.js是服务端渲染呈现的React应用程序的简约框架,这个项目�
 + next-routes
 + antd v3.9.2
 
+## 预览图
+<p align="center">
+<img alt="图片" src="static/images/Screenshot from 2019-04-22 11-51-34.png">
+<img alt="图片" src="static/images/Screenshot from 2019-04-22 11-51-48.png">
+</p>
+
+
 ## 功能
 
-+ SSR
-+ Automatic code splitting
++ 服务端渲染
++ js按需加载
++ Mobx状态管理器
 
 ## 其它
-### 使用了动态路由跳转使用next-routes提供的方法
-+ Link example
 
-```bash
+### 使用了动态路由跳转使用next-routes提供的方法
+
+#### 路由声明`routers/index.js`
+
+```js
+const routes = require('next-routes');
+
+module.exports = routes()
+.add('demo', '/demo/:id', 'demo')
+.add('nestedRouter', '/nested_router', 'nestedRouter')
+.add('link1', '/nested_router/link1', 'nestedRouter/link1')
+.add('link2', '/nested_router/link2', 'nestedRouter/link2')
+.add('netWork', '/netWork', 'netWork')
+.add('structChart', '/struct_chart', 'structChart')
+```
+
+#### 使用`Link`路由跳转
+
+```js
 import {Link} from '../routes'
 
 export default () => (
@@ -38,16 +59,16 @@ export default () => (
     <Link route='blog' params={{slug: 'hello-world'}}>
       <a>Hello world</a>
     </Link>
-    or
+    或者
     <Link route='/blog/hello-world'>
       <a>Hello world</a>
     </Link>
   </div>
 )
 ```
-+ Router example
+#### 使用`Router`跳转路由
 
-```bash
+```js
 import React from 'react'
 import {Router} from '../routes'
 
@@ -73,9 +94,7 @@ export default class Blog extends React.Component {
 ### 安装
 
 ```bash
-npm install
-or
-yarn(推荐)
+npm install 或 yarn(推荐)
 ```
 ### 开发环境运行
 ```bash
