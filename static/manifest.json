@@ -1,0 +1,15 @@
+{
+  "name": "name at package.json",
+  "short_name": "short name of name at package.json",
+  "icons": [
+    {
+      "src": "manifest/icon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EFEFEF",
+  "theme_color": "#EFEFEF"
+}

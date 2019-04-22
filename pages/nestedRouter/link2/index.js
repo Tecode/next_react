@@ -1,10 +1,11 @@
-import { Helmet } from "react-helmet";
+import Head from 'next/head';
 
 export default () => (
-    <React.Fragment>
-        <Helmet>
-            <meta name="description" content="嵌套路由2" />
-            <title>嵌套路由2</title>
-        </Helmet>
-        嵌套路由2
-    </React.Fragment>);
+	<React.Fragment>
+		<Head>
+			<meta name="description" content="2嵌套路由2" />
+			<title>嵌套路由2</title>
+		</Head>
+		嵌套路由2
+		</React.Fragment>
+);

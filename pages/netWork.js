@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 
 export default class NetWork extends Component {
   componentDidMount() {
@@ -8,10 +8,10 @@ export default class NetWork extends Component {
   render() {
     return (
       <React.Fragment>
-        <Helmet>
+        <Head>
           <title>My Title</title>
           <script src="https://d3js.org/d3.v5.min.js"></script>
-        </Helmet>
+        </Head>
       </React.Fragment>
     );
   }
